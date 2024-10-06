@@ -1,0 +1,59 @@
+const convertBtn = document.getElementById("convert-btn");
+const output  = document.getElementById("output");
+const number = document.getElementById("number");
+
+const isEmpty = () => {
+  if(number.value === ""){
+    output.textContent ="Please enter a valid number";
+    return false;
+  }
+  else if(number.value < 1){
+    output.textContent ="please enter a number greater than or equal to 1";
+    return false;
+  }
+  else if(number.value >= 4000){
+    output.textContent = "Please enter a number less than or equal to 3999";
+    return false;
+  }
+  return true;
+}
+
+convertBtn.addEventListener("click", isEmpty)
+
+
+function convertToRoman(num){
+  const romanNumerals = [
+    {value:1000, symbol:'M'},
+    {value:900, symbol:'CM'},
+    {value:500, symbol:'D'},
+    {value:400, symbol:'CD'},
+    {value:100, symbol:'C'},
+    {value:90, symbol:'XC'},
+    {value:50, symbol:'L'},
+    {value:40, symbol:'XL'},
+    {value:10, symbol:'X'},
+    {value:9, symbol:'IX'},
+    {value:5, symbol:'V'},
+    {value:4, symbol:'IV'},
+    {value:1, symbol:'I'}
+  ];
+
+  let roman = '';
+  
+  romanNumerals.forEach(({value, symbol}) => {
+    while(num >= value){
+      roman += symbol;
+      num -= value;
+    }
+  });
+
+  return roman;
+}
+
+convertBtn.addEventListener("click",() => {
+  if(isEmpty()){
+    const num = parseInt(number.value);
+    const roman = convertToRoman(num);
+    output.textContent = roman;
+  }
+});
