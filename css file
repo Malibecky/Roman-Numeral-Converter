@@ -1,0 +1,68 @@
+:root {
+  --gray-00: #ffffff;
+  --gray-05: #f5f6f7;
+  --gray-15: #d0d0d5;
+  --gray-75: #3b3b4f;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  --blue-50: #198eee;
+  --error: #a94442;
+  --danger-color: #850000;
+  --danger-background: #ffadad;
+}
+body {
+  min-height: 100vh;
+  padding: 50px 20px;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--gray-85);
+  color: var(--gray-05);
+}
+input {
+  display: block;
+  font-size: 2.5rem;
+  width: 100%;
+  height: 60px;
+  padding: 6px 12px;
+  margin: 10px 0;
+  line-height: 1.4;
+  color: white;
+  background-color: var(--gray-90);
+  border: 1px solid var(--gray-05);
+}
+
+button {
+  cursor: pointer;
+  margin-top: 15px;
+  text-decoration: none;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
+  padding: 10px 16px;
+  font-size: 23px;
+  width: 100%;
+}
+
+.output {
+  color: white;
+  background-color: var(--gray-75);
+  border: 3px solid var(--gray-05);
+  font-size: 2.5rem;
+  width: 90%;
+  max-width: 500px;
+  min-height: 55px;
+  margin-top: 25px;
+  padding: 15px;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+label {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-50);
+}
